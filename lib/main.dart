@@ -45,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  int selectedImage = -1;
   var imageItems = [
     {
       'img':
@@ -53,77 +54,64 @@ class _MyHomePageState extends State<MyHomePage> {
     },
     {
       'img':
-          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
+          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes2.png',
       'title': 'Shoes 2'
     },
     {
       'img':
-      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
+      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes3.png',
       'title': 'Shoes 3'
     },
     {
       'img':
-      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
+      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes4.png',
       'title': 'Shoes 4'
     },
     {
       'img':
-      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
+      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes5.png',
       'title': 'Shoes 5'
     },
     {
       'img':
-      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
+      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes6.png',
       'title': 'Shoes 6'
     },
     {
       'img':
-      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
+      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes7.png',
       'title': 'Shoes 7'
     },
     {
       'img':
-      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
+      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes8.png',
       'title': 'Shoes 8'
     },
     {
       'img':
-      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
+      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes9.png',
       'title': 'Shoes 9'
     },
     {
       'img':
-      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
+      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes10.png',
       'title': 'Shoes 10'
     },
     {
       'img':
-      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
+      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes11.png',
       'title': 'Shoes 11'
     },
     {
       'img':
-      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
+      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes12.png',
       'title': 'Shoes 12'
     },
     {
       'img':
-      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
+      'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes13.png',
       'title': 'Shoes 13'
     },
-
-    /*{'img': Image.asset('images/shoes2.png'), 'title': 'Shoes 2'},
-    {'img': Image.asset('images/shoes3.png'), 'title': 'Shoes 3'},
-    {'img': Image.asset('images/shoes4.png'), 'title': 'Shoes 4'},
-    {'img': Image.asset('images/shoes5.png'), 'title': 'Shoes 5'},
-    {'img': Image.asset('images/shoes6.png'), 'title': 'Shoes 6'},
-    {'img': Image.asset('images/shoes7.png'), 'title': 'Shoes 7'},
-    {'img': Image.asset('images/shoes8.png'), 'title': 'Shoes 8'},
-    {'img': Image.asset('images/shoes9.png'), 'title': 'Shoes 9'},
-    {'img': Image.asset('images/shoes10.png'), 'title': 'Shoes 10'},
-    {'img': Image.asset('images/shoes11.png'), 'title': 'Shoes 11'},
-    {'img': Image.asset('images/shoes12.png'), 'title': 'Shoes 12'},
-    {'img': Image.asset('images/shoes13.png'), 'title': 'Shoes 13'},*/
   ];
 
   @override
@@ -165,7 +153,10 @@ class _MyHomePageState extends State<MyHomePage> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              mySnackBar(context, imageItems[index]['title']);
+              setState(() {
+                selectedImage = index;
+                mySnackBar(context, imageItems[index]['title']);
+              });
             },
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,12 +164,25 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, 25, 8, 10),
-                  child: CircleAvatar(
-                    radius: 40,
-                    child: Image.network(
-                      imageItems[index]['img']!,
-                      fit: BoxFit.fill,
-                    ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
+                        radius: selectedImage == index? 50 : 40,
+                        backgroundColor: selectedImage == index ? const Color.fromRGBO(100, 236, 199, 1) : const Color.fromRGBO(234, 220, 254, 1),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Image.network(
+                            imageItems[index]['img']!,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(imageItems[index]['title']!, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),
+                      ),
+                    ],
                   ),
                 ),
               ],
