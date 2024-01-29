@@ -66,52 +66,52 @@ class _MyHomePageState extends State<MyHomePage>
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes1.png',
-      'title': 'Shoes 1'
+      'title': 'Men Shoes'
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes14.png',
-      'title': 'Shoes 14'
+      'title': 'Women Shoes'
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes2.png',
-      'title': 'Shoes 2'
+      'title': 'Men Shoes'
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes15.png',
-      'title': 'Shoes 15'
+      'title': 'Women Shoes'
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes3.png',
-      'title': 'Shoes 3'
+      'title': 'Men Shoes'
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes16.png',
-      'title': 'Shoes 16'
+      'title': 'Women Shoes'
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes4.png',
-      'title': 'Shoes 4'
+      'title': 'Men Shoes'
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes17.png',
-      'title': 'Shoes 17'
+      'title': 'Women Shoes'
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes5.png',
-      'title': 'Shoes 5'
+      'title': 'Men Shoes'
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes18.png',
-      'title': 'Shoes 18'
+      'title': 'Women Shoes'
     },
   ];
 
