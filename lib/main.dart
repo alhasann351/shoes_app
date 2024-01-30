@@ -124,6 +124,7 @@ class _MyHomePageState extends State<MyHomePage>
     );*/
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 85,
         title: const Padding(
           padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
           child: Text(
@@ -192,7 +193,7 @@ class _MyHomePageState extends State<MyHomePage>
                                   child: Text(
                                     imageItems[index]['title']!,
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                        //fontWeight: FontWeight.bold,
                                         fontSize: 16,
                                         color: selectedImage == index
                                             ? const Color.fromRGBO(
@@ -217,7 +218,7 @@ class _MyHomePageState extends State<MyHomePage>
                         borderRadius: BorderRadius.circular(12)),
                     elevation: 5,
                     child: Container(
-                      width: 235,
+                      width: MediaQuery.of(context).size.width * 0.60,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12)),
@@ -257,9 +258,9 @@ class _MyHomePageState extends State<MyHomePage>
                   Expanded(
                     child: TabBarView(
                       controller: tabController,
-                      children: const [
+                      children: [
                         MenShoes(),
-                        WomenShoes(),
+                        const WomenShoes(),
                       ],
                     ),
                   )
