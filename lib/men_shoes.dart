@@ -21,84 +21,97 @@ class MenShoes extends StatelessWidget {
   var menImageItems = [
     {
       'img':
-          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes13.png',
-      'title': 'Nike'
-    },
-    {
-      'img':
-          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes2.png',
-      'title': 'Adidas'
-    },
-    {
-      'img':
-          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes3.png',
-      'title': 'Puma'
-    },
-    {
-      'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes9.png',
-      'title': 'Adidas'
+      'title': 'Nike',
+      'price': '\$10',
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes5.png',
-      'title': 'Reebok'
+      'title': 'Adidas',
+      'price': '\$20',
     },
     {
       'img':
-          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes6.png',
-      'title': 'Puma'
-    },
-    {
-      'img':
-          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes7.png',
-      'title': 'Adidas'
-    },
-    {
-      'img':
-          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes8.png',
-      'title': 'Puma'
+          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes3.png',
+      'title': 'Puma',
+      'price': '\$30',
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes9.png',
-      'title': 'Adidas'
+      'title': 'Adidas',
+      'price': '\$10',
+    },
+    {
+      'img':
+          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes5.png',
+      'title': 'Reebok',
+      'price': '\$20',
+    },
+    {
+      'img':
+          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes6.png',
+      'title': 'Puma',
+      'price': '\$10',
+    },
+    {
+      'img':
+          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes7.png',
+      'title': 'Adidas',
+      'price': '\$40',
+    },
+    {
+      'img':
+          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes8.png',
+      'title': 'Puma',
+      'price': '\$50',
+    },
+    {
+      'img':
+          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes9.png',
+      'title': 'Adidas',
+      'price': '\$10',
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes10.png',
-      'title': 'Puma'
+      'title': 'Puma',
+      'price': '\$90',
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes11.png',
-      'title': 'Women Shoes'
+      'title': 'Women Shoes',
+      'price': '\$60',
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes12.png',
-      'title': 'Nike'
+      'title': 'Nike',
+      'price': '\$10',
     },
     {
       'img':
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes13.png',
-      'title': 'Nike'
+      'title': 'Nike',
+      'price': '\$30',
     },
   ];
   final List<Color> itemColors = [
-    Colors.red,
-    Colors.green,
-    Colors.blue,
-    Colors.orange,
-    Colors.purple,
-    Colors.red,
-    Colors.green,
-    Colors.blue,
-    Colors.orange,
-    Colors.purple,
-    Colors.red,
-    Colors.green,
-    Colors.blue,
+    Colors.red.shade400,
+    Colors.green.shade400,
+    Colors.blue.shade400,
+    Colors.orange.shade400,
+    Colors.purple.shade400,
+    Colors.red.shade400,
+    Colors.green.shade400,
+    Colors.blue.shade400,
+    Colors.orange.shade400,
+    Colors.purple.shade400,
+    Colors.red.shade400,
+    Colors.green.shade400,
+    Colors.blue.shade400,
   ];
 
   @override
@@ -150,7 +163,7 @@ class MenShoes extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(15, 5, 15, 5),
           child: SizedBox(
-              height: 350,
+              height: 360,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: menImageItems.length,
@@ -166,14 +179,90 @@ class MenShoes extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Container(
-                                height: 310,
-                                width: 240,
-                                clipBehavior: Clip.hardEdge,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                              ),
+                                  height: 340,
+                                  width: 240,
+                                  clipBehavior: Clip.hardEdge,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            20, 0, 30, 10),
+                                        child: SizedBox(
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          height: 30,
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
+                                            children: [
+                                              Text(
+                                                menImageItems[index]['price']!,
+                                                style: const TextStyle(
+                                                  fontSize: 25,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              const Padding(
+                                                padding: EdgeInsets.all(12.0),
+                                                child: Row(
+                                                  children: [
+                                                    Icon(
+                                                      Icons.star,
+                                                      size: 15,
+                                                      color: Color.fromRGBO(
+                                                          100, 236, 199, 1),
+                                                    ),
+                                                    Icon(
+                                                      Icons.star,
+                                                      size: 15,
+                                                      color: Color.fromRGBO(
+                                                          100, 236, 199, 1),
+                                                    ),
+                                                    Icon(
+                                                      Icons.star,
+                                                      size: 15,
+                                                      color: Color.fromRGBO(
+                                                          100, 236, 199, 1),
+                                                    ),
+                                                    Icon(
+                                                      Icons.star,
+                                                      size: 15,
+                                                      color: Color.fromRGBO(
+                                                          100, 236, 199, 1),
+                                                    ),
+                                                    Icon(
+                                                      Icons.star,
+                                                      size: 15,
+                                                      color: Colors.grey,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                                        child: SizedBox(
+                                            height: 30,
+                                            child: Text(
+                                              menImageItems[index]['title']!,
+                                              style: const TextStyle(
+                                                fontSize: 20,
+                                              ),
+                                            )),
+                                      ),
+                                    ],
+                                  )),
                             ),
                           ],
                         ),
@@ -183,9 +272,20 @@ class MenShoes extends StatelessWidget {
                             width: 180,
                             height: 240,
                             decoration: BoxDecoration(
-                                color: itemColors[index],
-                                borderRadius:
-                                BorderRadius.circular(15)),
+                              color: itemColors[index],
+                              borderRadius: BorderRadius.circular(15),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: itemColors[index],
+                                  //blurRadius: 25,
+                                  //spreadRadius: 0,
+                                  //offset: const Offset(
+                                    //20,
+                                    //20,
+                                  //),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         Positioned(
@@ -196,12 +296,12 @@ class MenShoes extends StatelessWidget {
                           child: Center(
                             child: Image.network(
                               menImageItems[index]['img']!,
-                              //fit: BoxFit.fill,
-                              height: 230,
-                              width: 230,
+                              fit: BoxFit.fill,
+                              height: 180,
+                              width: 180,
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   );
