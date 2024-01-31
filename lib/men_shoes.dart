@@ -36,7 +36,7 @@ class MenShoes extends StatelessWidget {
     },
     {
       'img':
-          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes4.png',
+          'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes9.png',
       'title': 'Adidas'
     },
     {
@@ -84,6 +84,21 @@ class MenShoes extends StatelessWidget {
           'https://raw.githubusercontent.com/alhasann351/shoes_app/master/images/shoes13.png',
       'title': 'Nike'
     },
+  ];
+  final List<Color> itemColors = [
+    Colors.red,
+    Colors.green,
+    Colors.blue,
+    Colors.orange,
+    Colors.purple,
+    Colors.red,
+    Colors.green,
+    Colors.blue,
+    Colors.orange,
+    Colors.purple,
+    Colors.red,
+    Colors.green,
+    Colors.blue,
   ];
 
   @override
@@ -142,46 +157,51 @@ class MenShoes extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {},
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                    child: Stack(
+                      clipBehavior: Clip.none,
                       children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: 310,
+                                width: 240,
+                                clipBehavior: Clip.hardEdge,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
-                            height: 310,
-                            width: 245,
-                            clipBehavior: Clip.hardEdge,
+                            width: 180,
+                            height: 240,
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  elevation: 5,
-                                  child: Container(
-                                    width: 180,
-                                    decoration: BoxDecoration(
-                                        color: const Color.fromRGBO(
-                                            254, 101, 99, 1),
-                                        borderRadius:
-                                            BorderRadius.circular(15)),
-                                    child: Image.network(
-                                      menImageItems[index]['img']!,
-                                      fit: BoxFit.fill,
-                                      height: 196,
-                                      width: 196,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                                color: itemColors[index],
+                                borderRadius:
+                                BorderRadius.circular(15)),
                           ),
                         ),
+                        Positioned(
+                          right: -30,
+                          bottom: 50,
+                          top: -50,
+                          left: 0,
+                          child: Center(
+                            child: Image.network(
+                              menImageItems[index]['img']!,
+                              //fit: BoxFit.fill,
+                              height: 230,
+                              width: 230,
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   );
