@@ -62,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage>
   }
 
   int selectedImage = -1;
+  int selectedIndex = 0;
   var imageItems = [
     {
       'img':
@@ -150,7 +151,50 @@ class _MyHomePageState extends State<MyHomePage>
           ),
         ],
       ),
+      bottomNavigationBar: BottomAppBar(
+        padding: EdgeInsets.zero,
+        shape: const CircularNotchedRectangle(),
+        notchMargin: 10.0,
+        clipBehavior: Clip.antiAlias,
+        child: BottomNavigationBar(
+          selectedItemColor: Color.fromRGBO(100, 236, 199, 1),
+          onTap: (index){
+            setState(() {
+              selectedIndex = index;
+            });
+          },
+          currentIndex: selectedIndex,
+          items: const [
+            BottomNavigationBarItem(
+              icon: CircleAvatar(
+                backgroundColor: Color.fromRGBO(100, 236, 199, 1),
+                  child: Icon(Icons.home, color: Colors.black,),
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: CircleAvatar(
+                  backgroundColor: Color.fromRGBO(100, 236, 199, 1),
+                  child: Icon(Icons.card_giftcard_outlined, color: Colors.black,)),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: CircleAvatar(
+                  backgroundColor: Color.fromRGBO(100, 236, 199, 1),
+                  child: Icon(Icons.favorite_border_outlined, color: Colors.black,)),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: CircleAvatar(
+                  backgroundColor: Color.fromRGBO(100, 236, 199, 1),
+                  child: Icon(Icons.menu_open, color: Colors.black,)),
+              label: '',
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
+        //physics: NeverScrollableScrollPhysics(),
         child: Column(
           children: [
             SizedBox(
@@ -261,7 +305,7 @@ class _MyHomePageState extends State<MyHomePage>
                       controller: tabController,
                       children: [
                         MenShoes(),
-                        const WomenShoes(),
+                        WomenShoes(),
                       ],
                     ),
                   )

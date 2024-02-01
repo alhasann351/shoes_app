@@ -118,6 +118,7 @@ class MenShoes extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       physics: const ScrollPhysics(),
+      scrollDirection: Axis.vertical,
       children: [
         Padding(
           padding: const EdgeInsets.all(20),
